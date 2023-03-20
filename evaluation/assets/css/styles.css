@@ -74,34 +74,13 @@ h2 {
 
 
 body {
-    background: url(/assets/img/fleur.jpg);
-}
-/*pop est pour la couleur de la h2 dans tableau*/
-.pop {
-    width: 100%;
+    background: url(/evaluation/assets/img/fleur.jpg);
 }
 
-.pop {
-    color: rgb(76, 0, 255);
-    text-align: center;
-}
 
-/*ceci concerne les boites*/
-#leflex1 {
-    display: flex;
-    flex-wrap: wrap;
-}
 
-#DIVsection1 {
-    width: 80%;
-}
 
-#DIVaside1 {
-    background-color: grey;
-    width: 20%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+
 
 p,
 h1,
@@ -139,6 +118,7 @@ h3 {
 
     h2 {
         font-size: 14px;
+
     }
 
 }
@@ -156,22 +136,74 @@ p {
     height: 1%;
 }
 
-label {
-    font-weight: bold;
-    ;
-}
 
-input {
-    margin: 8px;
+
+/********************* Formulaire *******************/
+/* style général du formulaire */
+.form_box{
+    width: 1100px;
+    background: #b4b4b4;
+    padding: 80px;
+    border-radius: 20px;
+   }
+   .input-row{
+    position: relative;
+    margin-bottom: 15px;
 }
-table{
-    width: 40%;
-    text-align: center;
-    
+  /* style du titre "CONTACT" */
+  .form_box input:not([type="submit"],[type="checkbox"]),
+  .form_box textarea,
+  .form_box select{
+   width: 99%;
+   margin: 0 0 3px;
+   padding: 7px 10px; 
+   font-size: 15px;
+   color: gray;
+   border-radius: 5px;
+   border: 1px solid transparent;
+  }
+  
+  .form-box textarea{
+    height: 70px;}
+   .form_box input[type="checkbox"]{
+       position: absolute;
+       left: 0;
+       top: 0;
+   }
+  
+  .check_label{
+    padding-left: 25px;
 }
-th, td{
-    border: solid 2px rgb(69, 117, 69);
+.check_label{
+    padding-left: 25px;
 }
-thead{
-    background-color: #bdb57e;
+  /* style des champs du formulaire */
+  .error{
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+    color: red;
+    display: none;
 }
+  
+  /* style du bouton "Envoyer" */
+  #envoyerFormulaire {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* style du bouton "Annuler" */
+  #annulerFormulaire {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="assets/js/index.js"></script>
+    
 </head>
 <body>
     <header><img src="assets/img/jarditou_html_zip/images/jarditou_logo.jpg" alt="jarditou_logo" title="jarditout" width="20%"><br>
@@ -28,58 +28,84 @@
     
     <img id="promo" src="assets/img/jarditou_html_zip/images/promotion.jpg" alt="jarditou_logo" title="jarditout"><br>
     <br>
-    <p>
-    <form action="destination.php" method="post" id="formulaire_contact"></form>
-    </p>
-
-    <body>
-        <h2>Contact</h2><br>
-        <form action="destination.php" method="post" id="formulaire contact">
-        </form>
+    <div class="conteneur">
+    
+        <h2>CONTACT</h2>
+    <form name="formulaireContact" method="post" onsubmit="return validForm()" action="valid.html">
+     <div class="form_box">   
         <hr>
         <h4>* Ces zones sont obligatoires</h4>
-        
-            <fieldset> 
-                <legend>Vos coordonnées</legend>
-            <p><laber for="user">Nom :</laber>
-            <input type="text" id="user" value="" /></p>
-            <p><label for="user">Prénom : </label>
-            <input type="text" id="user" value="" /></p>
-            <p><label for="comments">Sexe :</label>
-            Homme :<input type="radio" name="sex" />
-            Femme :<input type="radio" name="sex" /></p>
-            <p><label for="user">Date de naissance :</label>
-            <input type="date" id="user" value="" /></p>
-            <p><label for="user">Code postal :</label>
-            <input type="text" id="user" value="" /></p>
-            <p><label for="user">Adresse :</label>
-            <input type="text" id="user" value="" /></p>
-            <p><label for="user">Ville :</label>
-            <input type="text" id="user" value="" /></p>
-            <p><label for="emailaddress">Email :</label>
-            <input type="text" id="emailaddress" size="20" maxlength="30" value="dave.loper@afpa.fr" /></p>
-            </fieldset><br>
+    <fieldset> 
+        <legend>Vos coordonnées</legend>
             
-            <fieldset>
-            <legend>Votre demande</legend>
-            <label for="nom"> Sujet :</label>
-            <select name="sujet">
-                <option value="Veuillez séléctionner un sujet">Veuillez séléctionner un sujet</option>
+      <div class="input-row">
+        <input type="text" placeholder="Nom" name="nom" required >
+        <span class="error">Entrez votre nom</span>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="Prenom" name="prenom" required >
+        <span class="error">Entrez votre prenom</span>
+      </div>
+      <div class="input-row">
+        Homme :<input type="radio" name="sexe" required/>
+        Femme :<input type="radio" name="sexe" required />
+        <span class="error">Entrez votre prenom</span>
+      </div>
+      <div class="input-row">
+        <input type="date" placeholder="Date de naissance" name="dateNaissance" required  >
+        <span class="error">Entrez votre date de naissance</span>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="Code postal" name="codePostal" required >
+        <span class="error" >Entrez votre code postal</span>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="Adresse" name="adresse" required  >
+        <span class="error" >Entrez votre adresse</span>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="Ville" name="ville" required >
+        <span class="error">Entrez votre ville</span>
+      </div>
+      <div class="input-row">
+        <input type="text" placeholder="Email*" name="email" required >
+        <span class="error">Entrez votre email</span>
+      </div>    
+        </fieldset><br>
+        
+            
+    <fieldset>
+        <legend>Votre demande</legend>
+        <div class="input-row">
+            <select name="sujet" >
+                <option value="">Choisissez un sujet</option>
                 <option value="Mes commandes">Mes commandes</option>
-                <option value="Questions sur un produit">Questions sur un produit</option>
+                <option value="Un produit">Questions sur un produit</option>
                 <option value="Réclammation">Réclammation</option>
                 <option value="Autres">Autres</option>
-            </select><br>
-            <p><label for="comments">Message :</label>
-            <textarea id="comments" rows="7" cols="25"></textarea> </p>
-    
-        <label><input type="checkbox" name="nom"> J'accepte les conditions d'utilisation</label><br>
+            </select>
+            <span class="error">S'il vous plaît choisissez un sujet</span>
+     </div>
+     <div class="input-row"></div>
+            <textarea placeholder="Message" name="message" ></textarea>
+            <span class="error">S'il vous plaît entrez votre message</span> 
+     <div class="input-row">
+                <label class="check_label" for="conditions">Veuillez accepter toutes les conditions</label>
+                <input type="checkbox" name="conditions"  id="conditions" required >
+                <span class="error">Veuillez accepter toutes les conditions</span>
+        </div>
 
-        <p><div style="margin-left: 150px;">
-            <input type="submit" value="Envoyer" />
-            <input type="reset" value="Annuler" />
-        </div></p>
-        </fieldset>
+        <button id="envoyerFormulaire" type="submit" name="envoyerFormulaire">Envoyer</button>
+        <button id="annulerFormulaire" type="reset" name="annulerFormulaire">Annuler</button>
+        <br>
+        
+    </fieldset> 
+    </form>
+    </div><!--ceci est la Div de form_box-->
+</div><!-- ceci est la Div de conteneur-->
+
+    <body>
+
         <br>
         <hr>
         <footer>
@@ -91,6 +117,6 @@
                 </ul>
             </nav>
         </footer>
-    
+    <script src="assets/js/index.js"></script>
 </body>
 </html>

@@ -112,15 +112,105 @@ alert(PAP);
 //EXO5 
 
 // Verification de la formule
-
-document.getElementById("user").addEventListener("input", function(){
-var inputValue = this.value;
-if(inputValue === ""){
-document.getElementById("error").innerHTML = "Le nom est requis";
-} else {
-document.getElementById("error").innerHTML = "";
+var nom = document.formulaireContact.nom;
+var prenom = document.formulaireContact.prenom;
+var dateNaissance = document.formulaireContact.dateNaissance;
+var codePostal = document.formulaireContact.codePostal;
+var adresse = document.formulaireContact.adresse;
+var ville = document.formulaireContact.ville;
+var email = document.formulaireContact.email;
+var sujet = document.formulaireContact.sujet;
+var message = document.formulaireContact.message;
+var conditions = document.formulaireContact.conditions;
+if(nom.value == ""){
+  nom.nextElementSibling.style.display = "block";
+  nom.style.border = "1px solid #f00";
+  return false
+}else{
+  nom.nextElementSibling.style.display = "none";
+  nom.style.border = "1px solid transparent";
 }
-});
+if(prenom.value == ""){
+  prenom.nextElementSibling.style.display = "block";
+  prenom.style.border = "1px solid #f00";
+  return false
+}else{
+  prenom.nextElementSibling.style.display = "none";
+  prenom.style.border = "1px solid transparent";
+}
+if(dateNaissance.value == ""){
+  dateNaissance.nextElementSibling.style.display = "block";
+  dateNaissance.style.border = "1px solid #f00";
+  return false
+}else{
+  dateNaissance.nextElementSibling.style.display = "none";
+  dateNaissance.style.border = "1px solid transparent";
+}
+if(codePostal.value == ""){
+  codePostal.nextElementSibling.style.display = "block";
+  codePostal.style.border = "1px solid #f00";
+  return false
+}else{
+  codePostal.nextElementSibling.style.display = "none";
+  codePostal.style.border = "1px solid transparent";
+}
+if(!adresse.value.match(/^\(?([0-9]{1})\)?([0-9]{9})$/) || adresse.value == ""){
+  adresse.nextElementSibling.style.display = "block";
+  adresse.style.border = "1px solid #f00";
+  return false
+}else{
+  adresse.nextElementSibling.style.display = "none";
+  adresse.style.border = "1px solid transparent";
+}
+if(ville.value == ""){
+  ville.nextElementSibling.style.display = "block";
+  ville.style.border = "1px solid #f00";
+  return false
+}else{
+  ville.nextElementSibling.style.display = "none";
+  ville.style.border = "1px solid transparent";
+}
+if(!email.value.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/) || email.value == ""){
+  email.nextElementSibling.style.display = "block";
+  email.style.border = "1px solid #f00";
+  return false
+}else{
+  email.nextElementSibling.style.display = "none";
+  email.style.border = "1px solid transparent";
+}
+if(sujet.value == ""){
+sujet.nextElementSibling.style.display = "block";
+sujet.style.border = "1px solid #f00";
+return false
+}else{
+sujet.nextElementSibling.style.display = "none";
+sujet.style.border = "1px solid transparent";
+}
+if(message.value == ""){
+message.nextElementSibling.style.display = "block";
+message.style.border = "1px solid #f00";
+return false
+}else{
+message.nextElementSibling.style.display = "none";
+message.style.border = "1px solid transparent";
+}
+if(conditions.checked == false){
+conditions.nextElementSibling.style.display = "block";
+conditions.style.border = "1px solid #f00";
+return false
+}else{
+conditions.nextElementSibling.style.display = "none";
+conditions.style.border = "1px solid transparent";
+}
 
-
-
+function validateButton(button, regex) {
+if (!button.value.match(regex) || button.value === "") {
+button.nextElementSibling.style.display = "block";
+button.style.border = "1px solid #f00";
+return false;
+} else {
+button.nextElementSibling.style.display = "none";
+button.style.border = "1px solid transparent";
+return true;
+}
+}
